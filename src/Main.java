@@ -7,8 +7,8 @@
 public class Main {
     public static void main(String[] args) {
 //Creo due oggeti user, dove ho creato un'istanza
-        User user1 = new User("Pedro",15);
-        User user2= new User("Pablo",12);
+        User user1 = User.getInstance();
+        User user2= User.getInstance();
 
         //Continuop a stampare la informazione già ingresatta, ma solatanto la prima
 

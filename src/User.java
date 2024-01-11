@@ -2,7 +2,16 @@
 public class User {
     private String nome;
     private Integer eta;
-    //Faccio getters e setters
+    private static User user;
+
+    private User(){}
+
+    public static User getInstance(){
+        if(user == null){
+            user= new User();
+        }
+        return user;
+    }
 
     public String getNome() {
         return nome;
@@ -20,11 +29,14 @@ public class User {
         this.eta = eta;
     }
 
-    User(String nome, Integer eta){
-        this.nome=nome;
-        this.eta=eta;
-
+    public static User getUser() {
+        return user;
     }
+
+    public static void setUser(User user) {
+        User.user = user;
+    }
+
     //Creo una funzione che me permette stampare la informazione dichiarata
     public void stampaUserInformazione() {
         System.out.println("Nome: " + nome);
